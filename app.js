@@ -132,7 +132,7 @@
       {
         id: 'rohtash-beniwal',
         featured: true,
-        photo: 'beniwal.jpeg',
+        photo: 'beniwal.png',
         photoPos: '50% 18%',
         photoZoom: '',
         name: 'Rohtash Beniwal',
