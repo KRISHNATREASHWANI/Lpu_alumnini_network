@@ -1,1094 +1,832 @@
-/* ============================================================
-   Avatar colour palette — one per initial letter
-   ============================================================ */
-const AVATAR_COLORS = [
-  ['#7C5CFC','#9B6FFF'], // violet
-  ['#FC5C7D','#FF8FA3'], // coral
-  ['#5CF9FC','#00C2C7'], // cyan
-  ['#FFB347','#FFC55A'], // amber
-  ['#3CDD8C','#28B46B'], // green
-  ['#FC9D5C','#FF7A3D'], // orange
-  ['#A78BFA','#7C3AED'], // purple
-];
-function avatarGradient(name){
-  const idx = name.charCodeAt(0) % AVATAR_COLORS.length;
-  return AVATAR_COLORS[idx];
-}
+  const mentors = [
+      {
+        id: 'rhythem-nagpal',
+        featured: true,
+        photo: 'rhytem_nagpal.png',
+        photoPos: '50% 18%',
+        photoZoom: 'scale-[1.12]',
+        name: 'Rhythem Nagpal',
+        initials: 'RN',
+        role: 'Software Engineer',
+        company: 'Google',
+        industry: 'Software',
+        batch: '2022',
+        degree: 'B.Tech. CSE (Hons.)',
+        highlight: 'Ex-Amazon · Machine Learning & Product-Based MNC Mentor',
+        bullets: [
+          'Currently working as a Software Engineer at Google after prior experience at Amazon.',
+          'Graduated in B.Tech. CSE (Hons.) in 2022 with campus placement at InViz AI Solutions.',
+          'Invited back to campus in 2024 for an alumni guest lecture on tech innovation and digital strategy.'
+        ],
+        expertise: ['Machine Learning', 'DSA & Algorithms', 'FAANG Prep', 'Digital Strategy'],
+        topics: ['Google & FAANG Interview Prep', 'ML Engineer Roadmap', 'DSA Mock Interviews', 'Resume Review'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Rhythem%20Nagpal%20Google%20Lovely%20Professional%20University',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-shine-bright-inspiring-guest-lectures-by-rhythem-nagpal-and-yagna-ganesh-janga/',
+        sourceLabel: 'Official Alumni Feature',
+        tone: { bg1: '#D6E6FF', bg2: '#EAF2FF', tag: 'Google · Ex-Amazon' }
+      },
+      {
+        id: 'anmol-singh',
+        featured: true,
+        photo: 'anmol_singh.png',
+        photoPos: '50% 14%',
+        photoZoom: '',
+        name: 'Anmol Singh',
+        initials: 'AS',
+        role: 'R&D Engineer & Senior Research Consultant',
+        company: 'Tata Elxsi',
+        industry: 'Core Engineering',
+        batch: '2023',
+        degree: 'BBA, Mittal School of Business',
+        highlight: 'Ex-Tesla Silicon Valley (Model 3, Model Y & Optimus) · ₹1 Cr Milestone',
+        bullets: [
+          'Serves as R&D Engineer & Senior Research Consultant at Tata Elxsi in AI, robotics & design.',
+          'Previously worked at Tesla in Silicon Valley (Production Associate → Quality Technician) on Model 3, Model Y & Optimus.',
+          'Achieved an international ₹1 Crore career milestone and addressed students at a 2026 Youth Talk.'
+        ],
+        expertise: ['AI & Robotics', 'EV Manufacturing', 'Quality Operations', 'R&D Strategy'],
+        topics: ['Silicon Valley Career Roadmap', 'EV & Robotics Manufacturing', 'Interdisciplinary Pivot', 'Global Careers'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Anmol%20Singh%20Tata%20Elxsi%20Tesla',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumnus-anmol-singh-inspires-young-minds-with-his-journey-to-a-1-crore-career-milestone-in-silicon-valley/',
+        sourceLabel: 'Official Alumni Feature',
+        tone: { bg1: '#D2E4FF', bg2: '#E8F1FF', tag: 'Tata Elxsi · Ex-Tesla' }
+      },
+      {
+        id: 'bhuvan-reddy',
+        featured: true,
+        photo: 'reddy.png',
+        photoPos: '65% 20%',
+        photoZoom: 'scale-[1.08]',
+        name: 'Mekapotula Bhuvan Sundhar Reddy',
+        initials: 'BR',
+        role: 'Software Engineer',
+        company: 'Amazon India',
+        industry: 'Software',
+        batch: '2022',
+        degree: 'B.Tech. Electronics & Electrical Engineering',
+        highlight: '₹40 LPA Package at Amazon India · Ex-Cognizant',
+        bullets: [
+          'Secured a ₹40 LPA placement at Amazon India in 2022 from B.Tech. Electronics & Electrical Engineering.',
+          'Previously gained industry experience as a Programmer Analyst Trainee at Cognizant.',
+          'Specializes in Python, C++, Java, Data Analysis, and high-level algorithmic problem solving.'
+        ],
+        expertise: ['Python, C++ & Java', 'Data Analysis', 'Problem Solving', 'EEE to SDE Switch'],
+        topics: ['EEE to Software Engineering', 'Amazon Placement Prep', 'Competitive Coding', 'Super-Dream Offers'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Mekapotula%20Bhuvan%20Sundhar%20Reddy%20Amazon',
+        sourceUrl: 'https://happenings.lpu.in/lpu-student-placed-with-40-lpa-at-amazon-india/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#DAE9FF', bg2: '#EDF4FF', tag: 'Amazon India · ₹40 LPA' }
+      },
+      {
+        id: 'nishtha-sharma',
+        featured: true,
+        photo: 'nistha.png',
+        photoPos: '58% 18%',
+        photoZoom: '',
+        name: 'Nishtha Sharma',
+        initials: 'NS',
+        role: 'Technology & FinTech Analyst',
+        company: 'JPMorgan Chase & Co.',
+        industry: 'Finance',
+        batch: '2026',
+        degree: 'B.Tech. Computer Science & Engineering',
+        highlight: '₹19.75 LPA CTC · Global Financial Services Engineering',
+        bullets: [
+          'Secured campus placement at JPMorgan Chase & Co. in 2026 at a CTC of ₹19.75 LPA.',
+          'B.Tech. CSE graduate focused on enterprise engineering for global financial services.',
+          'Mentors undergraduates preparing for investment-bank technology interviews and campus drives.'
+        ],
+        expertise: ['FinTech Engineering', 'Enterprise Software', 'Quantitative Coding', 'Campus Prep'],
+        topics: ['Investment Bank Tech Prep', 'FinTech Engineering Interviews', 'Campus Placement Readiness', 'Resume Strategy'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Nishtha%20Sharma%20JPMorgan%20Chase',
+        sourceUrl: 'https://happenings.lpu.in/lpu-student-secures-prestigious-placement-with-jpmorgan-chase-and-co/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#D6E6FF', bg2: '#ECF3FF', tag: 'JPMorgan Chase · FinTech' }
+      },
+      {
+        id: 'prabhakar-sinha',
+        featured: true,
+        photo: 'prabhakar.png',
+        photoPos: '50% 18%',
+        photoZoom: '',
+        name: 'Prabhakar Sinha',
+        initials: 'PS',
+        role: 'Class-I Officer (UPSC IES)',
+        company: 'Indian Railways',
+        industry: 'Core Engineering',
+        batch: '2014',
+        degree: 'B.Tech. Civil Engineering',
+        highlight: 'UPSC IES AIR-10 · GATE AIR-16 · Ex-ONGC',
+        bullets: [
+          'Cleared UPSC Indian Engineering Services (IES) with All India Rank 10 and GATE with AIR-16.',
+          'Currently serving as a Class-I Officer with Indian Railways after prior service at ONGC.',
+          '2014 B.Tech. Civil Engineering alumnus mentoring students for GATE, IES & PSU interviews.'
+        ],
+        expertise: ['UPSC IES Prep', 'GATE Civil', 'Civil Infrastructure', 'PSU Careers'],
+        topics: ['Cracking UPSC IES (AIR-10)', 'GATE Civil Strategy', 'ONGC & PSU Interviews', 'Core Engineering Prep'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Prabhakar%20Sinha%20Indian%20Railways',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-achievers/',
+        sourceLabel: 'Official Alumni Achievers',
+        tone: { bg1: '#D5E5FF', bg2: '#E9F2FF', tag: 'Indian Railways · IES AIR-10' }
+      },
+      {
+        id: 'rohtash-beniwal',
+        featured: true,
+        photo: 'rohtash.png',
+        photoPos: '50% 18%',
+        photoZoom: '',
+        name: 'Rohtash Beniwal',
+        initials: 'RB',
+        role: 'M.Tech. Thermal Engineering Scholar',
+        company: 'IIT Bombay',
+        industry: 'Higher Studies',
+        batch: '2018',
+        degree: 'B.Tech. Mechanical Engineering',
+        highlight: 'GATE Qualifier · 8.83 CGPA · Master\'s at IIT Bombay',
+        bullets: [
+          'Graduated in Mechanical Engineering in 2018 with an 8.83 CGPA.',
+          'Cleared GATE and earned admission to IIT Bombay for his Master\'s in Thermal Engineering.',
+          'Guides engineering students on balancing semester academics with top-rank GATE preparation.'
+        ],
+        expertise: ['Thermal Engineering', 'Mechanical Systems', 'GATE Preparation', 'IIT Admissions'],
+        topics: ['GATE Mechanical Roadmap', 'IIT Bombay M.Tech. Admissions', 'Balancing CGPA & GATE', 'Higher Studies'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Rohtash%20Beniwal%20IIT%20Bombay',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-achievers/',
+        sourceLabel: 'Official Alumni Achievers',
+        tone: { bg1: '#D8E8FF', bg2: '#ECF3FF', tag: 'IIT Bombay · M.Tech.' }
+      },
 
-const INDUSTRIES = ['Software', 'Core Engg', 'Finance', 'Higher Studies'];
+      {
+        id: 'aditi-gupta',
+        featured: false,
+        name: 'Aditi Gupta',
+        initials: 'AG',
+        role: 'Software Engineer',
+        company: 'Microsoft',
+        industry: 'Software',
+        batch: '2026',
+        degree: 'B.Tech. Computer Science & Engineering',
+        highlight: '₹53.23 LPA Placement at Microsoft (2025–26)',
+        bullets: [
+          'Secured a landmark ₹53.23 LPA placement at Microsoft during the 2025–26 placement cycle.',
+          'B.Tech. CSE graduate recognized for coding proficiency, mock interviews & live industry projects.',
+          'Helps students prepare for Microsoft coding rounds, internships, and technical interviews.'
+        ],
+        expertise: ['Software Engineering', 'DSA & System Prep', 'Microsoft Hiring', 'Hackathons'],
+        topics: ['Microsoft Interview Prep', 'Coding Assessments', 'Internship to PPO', 'Resume Building'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Aditi%20Gupta%20Microsoft%20Lovely%20Professional%20University',
+        sourceUrl: 'https://happenings.lpu.in/lpu-student-aditi-gupta-secures-rs-53-lpa-package-at-microsoft-another-landmark-achievement/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#D6E6FF', bg2: '#EAF2FF', tag: 'Microsoft · ₹53.23 LPA' }
+      },
+      {
+        id: 'harekrishna-mahto',
+        featured: false,
+        name: 'Harekrishna Mahto',
+        initials: 'HM',
+        role: 'Software Engineer',
+        company: 'Google LLC',
+        industry: 'Software',
+        batch: '2022',
+        degree: 'B.Tech. Computer Science & Engineering',
+        highlight: '₹64 LPA Super-Dream Offer at Google LLC',
+        bullets: [
+          'Secured a ₹64 LPA placement at Google LLC from the Department of Computer Science & Engineering.',
+          'Known for strong foundations in algorithms, scalable software design, and problem solving.',
+          'Mentors CSE students targeting high-impact global product engineering offers.'
+        ],
+        expertise: ['Algorithms & DSA', 'Backend Systems', 'Google Hiring', 'Competitive Coding'],
+        topics: ['Cracking Google India', 'DSA Strategy', 'Product Company Prep', 'Off-Campus Applications'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Harekrishna%20Mahto%20Google%20Lovely%20Professional%20University',
+        sourceUrl: 'https://happenings.lpu.in/lpu-verto-placed-at-google-llc-at-64-lakhs/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#D8E8FF', bg2: '#EDF4FF', tag: 'Google LLC · ₹64 LPA' }
+      },
+      {
+        id: 'nazia-parveen',
+        featured: false,
+        name: 'Nazia Parveen',
+        initials: 'NP',
+        role: 'Software Engineer',
+        company: 'Microsoft',
+        industry: 'Software',
+        batch: '2025',
+        degree: 'B.Tech. Computer Science & Engineering',
+        highlight: '₹51.03 LPA Dream Placement at Microsoft',
+        bullets: [
+          'Secured a dream placement at Microsoft with a ₹51.03 LPA annual package.',
+          'B.Tech. CSE graduate who built strong software engineering and interview readiness on campus.',
+          'Guides students on technical interview preparation and women-in-tech career pathways.'
+        ],
+        expertise: ['Software Development', 'Technical Interviews', 'DSA', 'Career Strategy'],
+        topics: ['Microsoft SDE Prep', 'Women in Tech Careers', 'Mock Interviews', 'Project Portfolio'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Nazia%20Parveen%20Microsoft%20Lovely%20Professional%20University',
+        sourceUrl: 'https://happenings.lpu.in/lpu-verto-nazia-parveen-lands-dream-placement-at-microsoft/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#DAE9FF', bg2: '#EEF4FF', tag: 'Microsoft · ₹51.03 LPA' }
+      },
+      {
+        id: 'sahil-baghla',
+        featured: false,
+        name: 'Dr. Sahil Baghla',
+        initials: 'SB',
+        role: 'Founder, CEO & vCISO',
+        company: 'EH1 Infotech Cybersecurity',
+        industry: 'Software',
+        batch: 'PG / Early Batch',
+        degree: 'B.Tech. (IT) & MBA (IT) · Ph.D.',
+        highlight: '15+ Years in Cybersecurity · Best Cyber Security Consultant Award',
+        bullets: [
+          'Founder & CEO of EH1 Infotech Cybersecurity Pvt. Ltd. advising organizations across 15+ countries.',
+          'Awarded Best Cyber Security Consultant of the Year (2023); holds CEH, CEI & Ph.D. credentials.',
+          'Mentors aspiring ethical hackers, security engineers, and student startup founders.'
+        ],
+        expertise: ['Cybersecurity Governance', 'vCISO Advisory', 'VAPT & Ethical Hacking', 'Entrepreneurship'],
+        topics: ['Cybersecurity Career Path', 'CEH Certifications', 'Founding a Startup', 'Enterprise Risk'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Dr%20Sahil%20Baghla%20EH1%20Infotech',
+        sourceUrl: 'https://eh1infotech.com/leadership/',
+        sourceLabel: 'Official Leadership Bio',
+        tone: { bg1: '#D5E5FF', bg2: '#EBF2FF', tag: 'EH1 Infotech · CEO' }
+      },
 
-const MENTORS = [
-  { id:'m1', name:'Priya Nandakumar', batch:2014, industry:'Software', jobTitle:'Staff Software Engineer', company:'Voltframe Systems',
-    linkedin:'https://linkedin.com/in/priya-nandakumar-demo',
-    domainExpertise:['Distributed systems','Backend APIs'],
-    mentoringTopics:['Interview prep','Career pivots to staff engineer','Resume review'],
-    slots:[
-      {id:'s1', date:'Sat, Sep 19', time:'10:00 AM', taken:false},
-      {id:'s2', date:'Sat, Sep 19', time:'4:00 PM',  taken:true},
-      {id:'s3', date:'Sun, Sep 27', time:'11:00 AM', taken:false},
-    ]},
-  { id:'m2', name:'Aarav Deshmukh', batch:2019, industry:'Software', jobTitle:'SDE II', company:'Nimbus Cloud',
-    linkedin:'https://linkedin.com/in/aarav-deshmukh-demo',
-    domainExpertise:['Cloud infrastructure','Kubernetes'],
-    mentoringTopics:['System design interviews','Open source contributions'],
-    slots:[
-      {id:'s4', date:'Sun, Sep 20', time:'3:00 PM',  taken:false},
-      {id:'s5', date:'Sat, Sep 26', time:'10:00 AM', taken:false},
-    ]},
-  { id:'m3', name:'Marcus Whitfield', batch:2016, industry:'Software', jobTitle:'Machine Learning Engineer', company:'Corvid Analytics',
-    linkedin:'https://linkedin.com/in/marcus-whitfield-demo',
-    domainExpertise:['Machine learning','Fraud detection models'],
-    mentoringTopics:['ML fundamentals','Portfolio review','Grad school vs. industry'],
-    slots:[
-      {id:'s6', date:'Sat, Sep 19', time:'6:00 PM',  taken:false},
-      {id:'s7', date:'Sun, Sep 20', time:'11:00 AM', taken:true},
-    ]},
-  { id:'m4', name:'Sanjay Rathore', batch:2010, industry:'Core Engg', jobTitle:'Design Engineer', company:'Trident Motors',
-    linkedin:'https://linkedin.com/in/sanjay-rathore-demo',
-    domainExpertise:['Automotive design','CAD / CAM'],
-    mentoringTopics:['Core vs. software career choice','PSU exam prep'],
-    slots:[
-      {id:'s8', date:'Sat, Sep 26', time:'11:00 AM', taken:false},
-      {id:'s9', date:'Sun, Sep 27', time:'2:00 PM',  taken:false},
-    ]},
-  { id:'m5', name:'Meera Kulkarni', batch:2013, industry:'Core Engg', jobTitle:'Site Engineer', company:'Ashland Infrastructure',
-    linkedin:'https://linkedin.com/in/meera-kulkarni-demo',
-    domainExpertise:['Structural engineering','Project execution'],
-    mentoringTopics:['On-site vs. desk roles','GATE preparation'],
-    slots:[{id:'s10', date:'Sun, Sep 20', time:'10:00 AM', taken:true}]},
-  { id:'m6', name:'Devika Rao', batch:2015, industry:'Core Engg', jobTitle:'Process Engineer', company:'Bellweather Chemicals',
-    linkedin:'https://linkedin.com/in/devika-rao-demo',
-    domainExpertise:['Process design','Plant operations'],
-    mentoringTopics:['Core engineering interviews','Working in PSUs'],
-    slots:[
-      {id:'s11', date:'Sat, Sep 19', time:'1:00 PM', taken:false},
-      {id:'s12', date:'Sat, Sep 26', time:'1:00 PM', taken:false},
-    ]},
-  { id:'m7', name:'Daniel Osei', batch:2009, industry:'Finance', jobTitle:'VP, Equity Research', company:'Marlow & Finch',
-    linkedin:'https://linkedin.com/in/daniel-osei-demo',
-    domainExpertise:['Equity research','Industrials coverage'],
-    mentoringTopics:['Breaking into research','Resume review','Networking'],
-    slots:[
-      {id:'s13', date:'Sun, Sep 20', time:'12:00 PM', taken:false},
-      {id:'s14', date:'Sun, Sep 27', time:'5:00 PM',  taken:false},
-    ]},
-  { id:'m8', name:'Ishaan Chatterjee', batch:2017, industry:'Finance', jobTitle:'Associate', company:'Falkridge Capital',
-    linkedin:'https://linkedin.com/in/ishaan-chatterjee-demo',
-    domainExpertise:['Investment banking','Mergers & acquisitions'],
-    mentoringTopics:['IB recruiting','Networking on campus'],
-    slots:[{id:'s15', date:'Sat, Sep 19', time:'9:00 AM', taken:false}]},
-  { id:'m9', name:'Sofia Marchetti', batch:2015, industry:'Higher Studies', jobTitle:'PhD Candidate, Applied Physics', company:'Lindberg Institute of Technology',
-    linkedin:'https://linkedin.com/in/sofia-marchetti-demo',
-    domainExpertise:['Applied physics research','Grant writing'],
-    mentoringTopics:['PhD applications','Statement of purpose review','Gap years'],
-    slots:[
-      {id:'s16', date:'Sun, Sep 20', time:'9:00 AM', taken:false},
-      {id:'s17', date:'Sun, Sep 27', time:'9:00 AM', taken:false},
-    ]},
-  { id:'m10', name:'Karan Vora', batch:2021, industry:'Higher Studies', jobTitle:'MS Student, Computer Science', company:'Redwater University',
-    linkedin:'https://linkedin.com/in/karan-vora-demo',
-    domainExpertise:['Computer science research','Teaching assistantships'],
-    mentoringTopics:['GRE strategy','MS applications abroad','Funding & assistantships'],
-    slots:[
-      {id:'s18', date:'Sat, Sep 26', time:'3:00 PM', taken:false},
-      {id:'s19', date:'Sat, Sep 26', time:'5:00 PM', taken:true},
-    ]},
-];
+      {
+        id: 'sri-saravana-vishnu',
+        featured: false,
+        name: 'Sri Saravana Vishnu',
+        initials: 'SV',
+        role: 'Robotics & Automation Engineer',
+        company: 'Global Robotics MNC',
+        industry: 'Core Engineering',
+        batch: '2025',
+        degree: 'B.Tech. Robotics & Automation',
+        highlight: '₹2.5 Crore Highest Placement Package (Class of 2025)',
+        bullets: [
+          'Secured the landmark ₹2.5 Crore international placement package from B.Tech. Robotics.',
+          'Built deep hands-on expertise in robotics systems, automation, and applied engineering.',
+          'Advises core-engineering students on building standout robotics projects and global portfolios.'
+        ],
+        expertise: ['Robotics Systems', 'Industrial Automation', 'Embedded Hardware', 'Global Offers'],
+        topics: ['Robotics Career Roadmap', 'International Core Offers', 'Hardware Projects', 'Research to Industry'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Sri%20Saravana%20Vishnu%20Robotics%20Lovely%20Professional%20University',
+        sourceUrl: 'https://happenings.lpu.in/lpu-records-exceptional-placement-outcomes-for-classes-of-2025-and-2026-highest-package-reaches-rs-2-5-crore/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#D2E4FF', bg2: '#E9F2FF', tag: 'Robotics · ₹2.5 Cr' }
+      },
+      {
+        id: 'rakesh-kumar',
+        featured: false,
+        name: 'Rakesh Kumar',
+        initials: 'RK',
+        role: 'Senior Executive Engineer',
+        company: 'Indian Railways',
+        industry: 'Core Engineering',
+        batch: 'PG / Early Batch',
+        degree: 'Engineering Alumnus & Author',
+        highlight: 'Senior Executive Engineer at Indian Railways · Author of Real Donors',
+        bullets: [
+          'Serves as Senior Executive Engineer with Indian Railways managing large-scale core infrastructure.',
+          'Launched his book "Real Donors" during Alumni Homecoming 2025 at the university auditorium.',
+          'Mentors students pursuing public-sector core engineering leadership and social impact.'
+        ],
+        expertise: ['Railway Engineering', 'Public Infrastructure', 'Project Execution', 'PSU Leadership'],
+        topics: ['Indian Railways Careers', 'Core Engineering Leadership', 'Work-Life & Purpose', 'Public Sector Exams'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Rakesh%20Kumar%20Senior%20Executive%20Engineer%20Indian%20Railways',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-from-across-the-globe-attended-alumni-homecoming-2025/',
+        sourceLabel: 'Alumni Homecoming Feature',
+        tone: { bg1: '#D6E6FF', bg2: '#ECF3FF', tag: 'Indian Railways · Sr. Exec.' }
+      },
 
-const MENTOR_PHOTOS = {
-  m1:'', m2:'', m3:'', m4:'', m5:'',
-  m6:'', m7:'', m8:'', m9:'', m10:'',
-};
+      {
+        id: 'bibin-babu',
+        featured: false,
+        name: 'Bibin Babu',
+        initials: 'BB',
+        role: 'FinTech & Digital Assets Strategist',
+        company: 'Bloomberg / FinTech',
+        industry: 'Finance',
+        batch: '2014',
+        degree: 'B.Tech. (IT) – MBA (HR) Integrated',
+        highlight: 'Ex-Bloomberg Institute Ambassador · Google I/O Representative',
+        bullets: [
+          'Served as Bloomberg Institute Ambassador promoting the Bloomberg Aptitude Test (BAT) globally.',
+          'Selected as one of only two Indian students to represent India at Google I/O San Francisco (2013).',
+          'Recognized among the world\'s top-ten crypto influencers and co-founded FinTech ventures.'
+        ],
+        expertise: ['FinTech & Web3', 'Financial Markets', 'MBA Strategy', 'Global Networking'],
+        topics: ['FinTech & Digital Assets', 'MBA Career Strategy', 'Global Fellowships', 'Personal Branding'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Bibin%20Babu%20Lovely%20Professional%20University',
+        sourceUrl: 'https://happenings.lpu.in/lpu-mba-alumnus-among-top-crypto-influencers/',
+        sourceLabel: 'Official Alumni Feature',
+        tone: { bg1: '#D5E5FF', bg2: '#EAF2FF', tag: 'Ex-Bloomberg · FinTech' }
+      },
+      {
+        id: 'abhinav-singh',
+        featured: false,
+        name: 'Abhinav Singh',
+        initials: 'AS',
+        role: 'Real Estate Finance & Advisory Associate',
+        company: 'Sobha Realty, Dubai',
+        industry: 'Finance',
+        batch: '2023',
+        degree: 'MBA, Mittal School of Business',
+        highlight: 'International Placement at Sobha Realty, Dubai (UAE)',
+        bullets: [
+          'MBA alumnus placed internationally with Sobha Realty in Dubai\'s premier real estate sector.',
+          'Specializes in real estate investment advisory, client finance, and international markets.',
+          'Guides MBA and finance students targeting Gulf and international corporate roles.'
+        ],
+        expertise: ['Real Estate Finance', 'International Markets', 'Investment Advisory', 'MBA Placements'],
+        topics: ['Dubai & UAE Careers', 'MBA Placement Strategy', 'Real Estate Finance', 'International Interviews'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Abhinav%20Singh%20Sobha%20Realty%20Dubai%20LPU',
+        sourceUrl: 'https://happenings.lpu.in/lpu-mba-student-abhinav-singh-conquers-dubais-real-estate-industry/',
+        sourceLabel: 'Official Placement Story',
+        tone: { bg1: '#D8E8FF', bg2: '#EDF4FF', tag: 'Sobha Realty · Dubai' }
+      },
+      {
+        id: 'yugendra-chaudhary',
+        featured: false,
+        name: 'Yugendra Chaudhary',
+        initials: 'YC',
+        role: 'MBA & Management Scholar',
+        company: 'IIM Raipur',
+        industry: 'Finance',
+        batch: '2020',
+        degree: 'B.Tech. CSE → MBA (IIM Raipur)',
+        highlight: 'CAT Qualifier · Transitioned from Engineering to IIM Management',
+        bullets: [
+          'B.Tech. CSE alumnus who cracked the Common Admission Test (CAT) to join IIM Raipur.',
+          'Combines quantitative engineering rigor with business, finance, and management strategy.',
+          'Mentors engineering undergraduates preparing for CAT, GD-PI, and IIM finance tracks.'
+        ],
+        expertise: ['CAT Preparation', 'IIM Admissions', 'Finance & Management', 'Quant Aptitude'],
+        topics: ['Cracking CAT from Engineering', 'IIM Interview Prep', 'MBA in Finance', 'Career Pivot'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Yugendra%20Chaudhary%20IIM%20Raipur%20LPU',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-achievers/',
+        sourceLabel: 'Official Alumni Achievers',
+        tone: { bg1: '#D6E6FF', bg2: '#ECF3FF', tag: 'IIM Raipur · CAT' }
+      },
 
-const MENTOR_DESCRIPTIONS = {
-  m1:'Priya has spent over a decade building backend platforms that serve millions of users. She enjoys helping students move from coursework to real engineering and prepare for tough technical interviews.',
-  m2:'Aarav works on cloud infrastructure and loves explaining how large systems stay reliable. He mentors students on system design, open source, and landing a first software role.',
-  m3:'Marcus builds machine learning models that catch fraud in real time. He is happy to talk through ML fundamentals, portfolio projects, and the choice between grad school and industry.',
-  m4:'Sanjay designs vehicle components and has worked on the shop floor and in the design office. He guides students weighing a core engineering career against software, and those preparing for PSU exams.',
-  m5:'Meera manages structural work on large construction sites. She can tell you what a day on site really looks like and how to prepare for GATE alongside a job.',
-  m6:'Devika works on chemical process design and plant operations. She helps students understand core engineering interviews and what working in a PSU is like.',
-  m7:'Daniel covers industrial companies as an equity research analyst. He mentors students who want to break into finance, from resume reviews to building a network.',
-  m8:'Ishaan works in investment banking on mergers and acquisitions deals. He shares how campus recruiting works and how to stand out in a competitive finance process.',
-  m9:'Sofia is completing her PhD in applied physics and has reviewed many applications. She supports students with statements of purpose, research fit, and deciding whether to take a gap year.',
-  m10:'Karan moved straight from his undergraduate degree to a computer science master\'s abroad. He helps with GRE planning, shortlisting universities, and finding funding.',
-};
-MENTORS.forEach(m => {
-  m.photo       = MENTOR_PHOTOS[m.id] || '';
-  m.description = MENTOR_DESCRIPTIONS[m.id] || '';
-});
-
-const COMPANIES = [...new Set(MENTORS.map(m => m.company))].sort();
-
-const RESOURCES = [
-  { id:'r1', cat:'Applications',      title:'Writing a resume alumni will actually read',
-    detail:'Lead with outcomes, not duties. Cut anything from before your current degree unless it changes the story. One page, always, before your first full-time role.' },
-  { id:'r2', cat:'Networking',        title:'How to ask for a mentor conversation without sounding transactional',
-    detail:'Name one specific thing about their path before asking for time. Propose a length (20 minutes) and let them choose the slot from what you offer.' },
-  { id:'r3', cat:'Interviews',        title:'What to do in the 48 hours before a case interview',
-    detail:'Redo two frameworks from memory rather than reading five new ones. Sleep matters more than one extra practice case.' },
-  { id:'r4', cat:'Core vs. software', title:'Deciding between a core engineering role and a software role',
-    detail:'Look at what you did in your best internship, not your best exam. The work you kept doing after the deadline passed is the signal.' },
-  { id:'r5', cat:'Higher studies',    title:'Deciding between grad school now or after a few years working',
-    detail:'If you cannot name what the degree unlocks that experience alone would not, working first usually sharpens the answer.' },
-];
-
-/* ============================================================
-   STATE
-   ============================================================ */
-const state = {
-  view: 'home',
-  user: null,
-  accounts: [],
-  requestStore: {},
-  authMode: 'login',
-  afterLogin: null,
-  filters: { industries:[], company:'all', batchFrom:'', batchTo:'', query:'' },
-  requests: [],
-  panelMentorId: null,
-  selectedSlotId: null,
-};
-
-/* ============================================================
-   HELPERS
-   ============================================================ */
-function initials(name){ return name.split(' ').map(p => p[0]).slice(0,2).join(''); }
-
-function avatarHtml(m, sizeClass){
-  const ini  = initials(m.name);
-  const [c1, c2] = avatarGradient(m.name);
-  if (m.photo){
-    return `<div class="avatar ${sizeClass}" style="background:linear-gradient(135deg,${c1},${c2})"><img src="${m.photo}" alt="${escapeHtml(m.name)}" onerror="this.parentNode.textContent='${ini}'"></div>`;
-  }
-  return `<div class="avatar ${sizeClass}" style="background:linear-gradient(135deg,${c1},${c2});color:#fff;" aria-hidden="true">${ini}</div>`;
-}
-
-function mentorById(id){ return MENTORS.find(m => m.id === id); }
-function slotById(mentor, slotId){ return mentor.slots.find(s => s.id === slotId); }
-
-function escapeHtml(s){
-  return String(s).replace(/[&<>"']/g, c =>
-    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-function showToast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(showToast._timer);
-  showToast._timer = setTimeout(() => t.classList.remove('show'), 2800);
-}
-
-function filteredMentors(){
-  return MENTORS.filter(m => {
-    if (state.filters.industries.length && !state.filters.industries.includes(m.industry)) return false;
-    if (state.filters.company !== 'all' && m.company !== state.filters.company) return false;
-    if (state.filters.batchFrom && m.batch < Number(state.filters.batchFrom)) return false;
-    if (state.filters.batchTo   && m.batch > Number(state.filters.batchTo))   return false;
-    const q = state.filters.query.trim().toLowerCase();
-    if (q){
-      const hay = (m.name+' '+m.jobTitle+' '+m.company+' '+m.domainExpertise.join(' ')+' '+m.mentoringTopics.join(' ')).toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
-  });
-}
-
-/* ============================================================
-   BACKGROUND CANVAS ANIMATION
-   ============================================================ */
-function initCanvas(){
-  const canvas = document.getElementById('bgCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, particles;
-
-  function resize(){
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
-  function makeParticle(){
-    return {
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      a: Math.random() * 0.5 + 0.1,
-    };
-  }
-
-  function init(){
-    resize();
-    particles = Array.from({ length: 120 }, makeParticle);
-  }
-
-  function draw(){
-    ctx.clearRect(0, 0, W, H);
-
-    // Soft background blobs (light theme)
-    const blobs = [
-      { x: W * 0.1,  y: H * 0.2,  r: W * 0.30, c: 'rgba(15,126,234,0.04)' },
-      { x: W * 0.85, y: H * 0.60, r: W * 0.25, c: 'rgba(0,184,148,0.035)' },
-      { x: W * 0.50, y: H * 0.85, r: W * 0.20, c: 'rgba(108,99,255,0.03)' },
-    ];
-    blobs.forEach(b => {
-      const g = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
-      g.addColorStop(0, b.c);
-      g.addColorStop(1, 'transparent');
-      ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI*2); ctx.fill();
-    });
-
-    // Floating dots (light, subtle)
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fillStyle = `rgba(15,126,234,${p.a * 0.6})`;
-      ctx.fill();
-    });
-
-    // Soft connection lines
-    for (let i = 0; i < particles.length; i++){
-      for (let j = i+1; j < particles.length; j++){
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 80){
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(15,126,234,${0.04 * (1 - dist/80)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
+      {
+        id: 'yagna-ganesh-janga',
+        featured: false,
+        name: 'Yagna Ganesh Janga',
+        initials: 'YJ',
+        role: 'Academic & Higher Education Specialist',
+        company: 'University of East London',
+        industry: 'Higher Studies',
+        batch: 'PG / Early Batch',
+        degree: 'International Academic Alumnus (UK)',
+        highlight: 'Global Higher Education & UK Academic Pathways',
+        bullets: [
+          'Thriving academic professional at the University of East London in the United Kingdom.',
+          'Invited back in 2024 as an alumni guest speaker on global academic trends and future education.',
+          'Mentors students planning UK postgraduate admissions, SOPs, and research pathways.'
+        ],
+        expertise: ['UK Higher Education', 'Global Admissions', 'Academic Research', 'SOP Strategy'],
+        topics: ['Studying in the UK', 'SOP & Scholarships', 'Research Proposals', 'Academic Careers'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Yagna%20Ganesh%20Janga%20University%20of%20East%20London',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-shine-bright-inspiring-guest-lectures-by-rhythem-nagpal-and-yagna-ganesh-janga/',
+        sourceLabel: 'Official Alumni Feature',
+        tone: { bg1: '#D4E5FF', bg2: '#EAF2FF', tag: 'Univ. of East London' }
+      },
+      {
+        id: 'arpit-shukla',
+        featured: false,
+        name: 'Arpit Shukla',
+        initials: 'AS',
+        role: 'M.Tech. Postgraduate Scholar',
+        company: 'IIT Guwahati',
+        industry: 'Higher Studies',
+        batch: '2020',
+        degree: 'B.Tech. Civil Engineering',
+        highlight: 'Admitted to IIT Guwahati for Higher Studies',
+        bullets: [
+          'Graduated in Civil Engineering with distinction and earned admission to IIT Guwahati.',
+          'Focuses on advanced civil engineering research and postgraduate academic excellence.',
+          'Helps undergraduates plan GATE timelines and IIT postgraduate applications.'
+        ],
+        expertise: ['Civil Engineering', 'GATE Strategy', 'IIT Guwahati Admissions', 'Academic Research'],
+        topics: ['GATE Civil Roadmap', 'IIT Postgraduate Prep', 'Research Track', 'Semester Planning'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Arpit%20Shukla%20IIT%20Guwahati%20LPU',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-achievers/',
+        sourceLabel: 'Official Alumni Achievers',
+        tone: { bg1: '#D7E7FF', bg2: '#ECF3FF', tag: 'IIT Guwahati · M.Tech.' }
+      },
+      {
+        id: 'mukesh-adlak',
+        featured: false,
+        name: 'Mukesh Adlak',
+        initials: 'MA',
+        role: 'M.Tech. Mechanical Scholar',
+        company: 'IIT Kanpur',
+        industry: 'Higher Studies',
+        batch: '2020',
+        degree: 'B.Tech. Mechanical Engineering',
+        highlight: 'Cleared GATE · Admitted to IIT Kanpur',
+        bullets: [
+          'Mechanical Engineering graduate who cleared GATE to pursue Master\'s studies at IIT Kanpur.',
+          'Built strong fundamentals in core mechanical design, thermodynamics, and exam strategy.',
+          'Guides students targeting top IITs for M.Tech. and research fellowships.'
+        ],
+        expertise: ['Mechanical Engineering', 'GATE Prep', 'IIT Kanpur', 'Higher Studies'],
+        topics: ['GATE Mechanical Prep', 'IIT Kanpur Admissions', 'Core Subject Mastery', 'Test Series Strategy'],
+        linkedinUrl: 'https://www.linkedin.com/search/results/people/?keywords=Mukesh%20Adlak%20IIT%20Kanpur%20LPU',
+        sourceUrl: 'https://happenings.lpu.in/lpu-alumni-achievers/',
+        sourceLabel: 'Official Alumni Achievers',
+        tone: { bg1: '#D5E5FF', bg2: '#EBF2FF', tag: 'IIT Kanpur · M.Tech.' }
       }
+    ];
+
+    let activeMentor = mentors[0];
+    const today = new Date(2026, 10, 25);
+    const maxDate = new Date(2027, 0, 25);
+    let calYear = today.getFullYear();
+    let calMonth = today.getMonth();
+    let pickedDate = '';
+    let pickedTime = '';
+    const timeSlots = ['10:00 AM IST', '11:30 AM IST', '04:00 PM IST', '06:00 PM IST'];
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    function byId(id) {
+      return document.getElementById(id);
     }
 
-    requestAnimationFrame(draw);
-  }
+    function findMentor(id) {
+      return mentors.find(m => m.id === id);
+    }
 
-  init();
-  draw();
-  window.addEventListener('resize', init);
-}
+    function batchText(m) {
+      return m.batch === 'PG / Early Batch' ? 'Alumni Mentor' : 'Batch ' + m.batch;
+    }
 
-/* ============================================================
-   CURSOR GLOW
-   ============================================================ */
-function initCursorGlow(){
-  const glow = document.getElementById('cursorGlow');
-  if (!glow) return;
-  window.addEventListener('mousemove', e => {
-    glow.style.left = e.clientX + 'px';
-    glow.style.top  = e.clientY + 'px';
-  });
-}
-
-/* ============================================================
-   NAV
-   ============================================================ */
-function renderNav(){
-  const tabs = [
-    { id:'directory',  label:'Directory' },
-    { id:'mentorship', label:'My mentorship' },
-    { id:'resources',  label:'Resources' },
-  ];
-  ['topNav','bottomNav'].forEach(navId => {
-    const el = document.getElementById(navId);
-    el.innerHTML = tabs.map(t =>
-      `<button data-view="${t.id}" class="${state.view===t.id?'active':''}">${t.label}</button>`
-    ).join('');
-    el.querySelectorAll('button').forEach(b =>
-      b.addEventListener('click', () => setView(b.dataset.view))
-    );
-  });
-}
-
-function setView(v){ state.view = v; render(); window.scrollTo({top:0, behavior:'auto'}); }
-
-/* ============================================================
-   DIRECTORY
-   ============================================================ */
-function renderDirectory(){
-  const list = filteredMentors();
-  return `
-    <div class="view-head">
-      <p class="section-label">Mentor Directory</p>
-      <h2>Find your guide in the network</h2>
-      <p>Filter by industry, company, or graduation batch. Check open weekend slots before you reach out.</p>
-    </div>
-
-    <button class="btn btn-ghost filters-toggle" id="openFilters">⚙ Filters</button>
-
-    <div class="directory-grid">
-      <div class="filter-rail" id="filterRail">
-        <div class="filter-group">
-          <h4>Search</h4>
-          <input class="search-box" id="searchInput" type="text" placeholder="Name, topic, or company" value="${escapeHtml(state.filters.query)}">
-        </div>
-        <div class="filter-group">
-          <h4>Industry</h4>
-          ${INDUSTRIES.map(ind => `
-            <label class="filter-option">
-              <input type="checkbox" data-industry="${ind}" ${state.filters.industries.includes(ind)?'checked':''}>
-              ${ind}
-            </label>
-          `).join('')}
-        </div>
-        <div class="filter-group">
-          <h4>Company</h4>
-          <select class="search-box" id="companySelect">
-            <option value="all" ${state.filters.company==='all'?'selected':''}>All companies</option>
-            ${COMPANIES.map(c => `<option value="${c}" ${state.filters.company===c?'selected':''}>${c}</option>`).join('')}
-          </select>
-        </div>
-        <div class="filter-group">
-          <h4>Graduation batch</h4>
-          <div class="batch-range">
-            <input type="number" id="batchFrom" placeholder="From" value="${state.filters.batchFrom}">
-            <span>–</span>
-            <input type="number" id="batchTo" placeholder="To" value="${state.filters.batchTo}">
-          </div>
-        </div>
-        <button class="clear-filters" id="clearFilters">Clear filters</button>
-      </div>
-
-      <div>
-        <p class="results-count">${list.length} mentor${list.length===1?'':'s'} match${list.length===1?'es':''}</p>
-        ${list.length === 0 ? `
-          <div class="empty-state">
-            <p>No mentors match these filters. Try widening your search.</p>
-            <button class="btn btn-ghost" id="emptyClear">Clear filters</button>
-          </div>
-        ` : `
-          <div class="mentor-list">
-            ${list.map(m => {
-              const openSlots = m.slots.filter(s => !s.taken).length;
-              const already   = state.requests.some(r => r.mentorId === m.id);
-              return `
-              <div class="mentor-card">
-                <div class="mentor-tab"><span>Batch of ${m.batch}</span></div>
-                <div class="card-avatar">${avatarHtml(m, 'avatar-md')}</div>
-                <div class="mentor-body">
-                  <div class="mentor-top">
-                    <h3>${m.name}</h3>
-                    <span class="mentor-role">${m.jobTitle}, ${m.company}</span>
-                  </div>
-                  <p class="mentor-industry-line">${m.industry}</p>
-                  ${m.description ? `<p class="mentor-desc">${escapeHtml(m.description)}</p>` : ''}
-                  <p class="mentor-tags"><b>Domain:</b> ${m.domainExpertise.join(', ')}</p>
-                  <p class="mentor-tags"><b>Mentors on:</b> ${m.mentoringTopics.join(', ')}</p>
-                  <div class="mentor-actions">
-                    <button class="btn btn-primary" data-open="${m.id}">${already ? 'View request' : 'Request mentorship'}</button>
-                    <a class="linkedin-link" href="${m.linkedin}" target="_blank" rel="noopener">↗ LinkedIn</a>
-                    <span class="slots-hint ${openSlots===0?'full':''}">${openSlots===0 ? '✕ No open slots' : '✓ '+openSlots+' open slot'+(openSlots===1?'':'s')}</span>
-                  </div>
-                </div>
-              </div>`;
-            }).join('')}
-          </div>
-        `}
-      </div>
-    </div>
-  `;
-}
-
-function wireDirectory(){
-  const search = document.getElementById('searchInput');
-  if (search) search.addEventListener('input', e => {
-    state.filters.query = e.target.value;
-    renderMain();
-    const s2 = document.getElementById('searchInput');
-    if (s2){ s2.focus(); s2.setSelectionRange(s2.value.length, s2.value.length); }
-  });
-
-  document.querySelectorAll('[data-industry]').forEach(cb => {
-    cb.addEventListener('change', e => {
-      const ind = e.target.dataset.industry;
-      if (e.target.checked) state.filters.industries.push(ind);
-      else state.filters.industries = state.filters.industries.filter(i => i !== ind);
-      renderMain();
-    });
-  });
-
-  const companySelect = document.getElementById('companySelect');
-  if (companySelect) companySelect.addEventListener('change', e => { state.filters.company = e.target.value; renderMain(); });
-
-  ['batchFrom','batchTo'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('input', e => {
-      state.filters[id] = e.target.value;
-      renderMain();
-      document.getElementById(id)?.focus();
-    });
-  });
-
-  ['clearFilters','emptyClear'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('click', () => {
-      state.filters = {industries:[], company:'all', batchFrom:'', batchTo:'', query:''};
-      renderMain();
-    });
-  });
-
-  document.querySelectorAll('[data-open]').forEach(btn =>
-    btn.addEventListener('click', () => openPanel(btn.dataset.open))
-  );
-
-  const openFilters = document.getElementById('openFilters');
-  if (openFilters) openFilters.addEventListener('click', () => {
-    document.getElementById('filterRail').classList.add('open');
-    ensureScrim(true, closeFilterRail);
-  });
-}
-
-function closeFilterRail(){
-  document.getElementById('filterRail')?.classList.remove('open');
-  ensureScrim(false);
-}
-
-/* ============================================================
-   DETAIL PANEL + BOOKING CALENDAR
-   ============================================================ */
-function buildCalendar(mentor){
-  const dates = [...new Set(mentor.slots.map(s => s.date))];
-  const times  = [...new Set(mentor.slots.map(s => s.time))].sort((a,b) => {
-    const toMin = t => {
-      const [,h,m,ap] = t.match(/(\d+):(\d+)\s?(AM|PM)/);
-      let hh = parseInt(h) % 12; if (ap==='PM') hh += 12;
-      return hh*60 + parseInt(m);
-    };
-    return toMin(a) - toMin(b);
-  });
-
-  const rows = times.map(time => {
-    const cells = dates.map(date => {
-      const slot = mentor.slots.find(s => s.date===date && s.time===time);
-      if (!slot) return `<td class="slot-cell-none">—</td>`;
-      if (slot.taken) return `<td><span class="slot-cell-taken">Booked</span></td>`;
-      const selected = state.selectedSlotId === slot.id;
-      return `<td><button type="button" class="slot-cell-btn ${selected?'selected':''}" data-slot="${slot.id}">${selected?'✓ Selected':'Select'}</button></td>`;
-    }).join('');
-    return `<tr><td class="rowlabel">${time}</td>${cells}</tr>`;
-  }).join('');
-
-  const header = dates.map(d => {
-    const [day, rest] = d.split(', ');
-    return `<th><span class="day-name">${day}</span><span class="day-date">${rest}</span></th>`;
-  }).join('');
-
-  return `
-    <div class="calendar-wrap">
-      <table class="calendar-table">
-        <thead><tr><th></th>${header}</tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>
-    <p class="calendar-legend">30-minute video sessions on weekends.</p>
-  `;
-}
-
-function openPanel(mentorId){
-  state.panelMentorId = mentorId;
-  state.selectedSlotId = null;
-  const mentor      = mentorById(mentorId);
-  const existingReq = state.requests.find(r => r.mentorId === mentorId);
-  renderPanel(mentor, existingReq);
-
-  const panel = document.getElementById('panel');
-  panel.classList.add('open');
-  panel.setAttribute('aria-hidden','false');
-  ensureScrim(true, closePanel);
-}
-
-function renderPanel(mentor, existingReq){
-  const panel = document.getElementById('panel');
-  const [c1, c2] = avatarGradient(mentor.name);
-
-  panel.innerHTML = `
-    <div class="panel-head">
-      <div>
-        <div class="avatar-row">
-          ${avatarHtml(mentor, 'avatar-lg')}
-          <div class="photo-actions">
-            <button type="button" class="btn btn-ghost photo-btn" id="photoBtn">${mentor.photo ? 'Change photo' : 'Add photo'}</button>
-            ${mentor.photo ? '<button type="button" class="photo-remove" id="photoRemove">Remove</button>' : ''}
-            <input type="file" id="photoInput" accept="image/*" hidden>
-          </div>
-        </div>
-        <h3>${mentor.name}</h3>
-        <p class="panel-meta">Batch of ${mentor.batch} · ${mentor.industry}</p>
-        <p class="panel-meta">${mentor.jobTitle}, ${mentor.company}</p>
-        <a class="panel-linkedin" href="${mentor.linkedin}" target="_blank" rel="noopener">↗ View LinkedIn profile</a>
-      </div>
-      <button class="panel-close" id="closePanel" aria-label="Close">✕</button>
-    </div>
-    <div class="panel-body">
-      ${mentor.description ? `
-      <div class="panel-section">
-        <h4>About</h4>
-        <p>${escapeHtml(mentor.description)}</p>
-      </div>` : ''}
-      <div class="panel-section">
-        <h4>Domain expertise</h4>
-        <div class="tag-row">${mentor.domainExpertise.map(t => `<span class="tag-pill">${t}</span>`).join('')}</div>
-      </div>
-      <div class="panel-section">
-        <h4>Mentoring topics</h4>
-        <div class="tag-row">${mentor.mentoringTopics.map(t => `<span class="tag-pill topic">${t}</span>`).join('')}</div>
-      </div>
-
-      ${existingReq ? `
-        <div class="panel-section">
-          <h4>Your request</h4>
-          <p>Sent ${existingReq.sentAt} on "${escapeHtml(existingReq.topic)}".${existingReq.slotId ? ' Booked for '+slotById(mentor,existingReq.slotId).date+', '+slotById(mentor,existingReq.slotId).time+'.' : ' Waiting on a time from '+mentor.name.split(' ')[0]+'.'}</p>
-          <p class="request-resume" style="margin-top:8px;">Resume shared: <a href="${existingReq.resumeLink}" target="_blank" rel="noopener">${existingReq.resumeLink}</a></p>
-          <p class="request-msg">"${escapeHtml(existingReq.question)}"</p>
-          <p class="panel-meta" style="margin-top:10px;">Status: ${existingReq.status}</p>
-        </div>
-      ` : `
-        <div class="panel-section">
-          <h4>Session booking — open weekend slots</h4>
-          ${mentor.slots.length ? buildCalendar(mentor) : '<p>No weekend slots posted right now. You can still send a request and ask for a time.</p>'}
-          <div class="calendar-none-option">
-            <input type="radio" name="slotChoice" id="slot-none" ${state.selectedSlotId?'':'checked'}>
-            <label for="slot-none">No fixed slot — ask ${mentor.name.split(' ')[0]} to suggest a time</label>
-          </div>
-        </div>
-        <div class="panel-section">
-          <label class="field-label" for="topicSelect">Topic you'd like to discuss</label>
-          <select class="form-input" id="topicSelect">
-            ${mentor.mentoringTopics.map(t => `<option value="${t}">${t}</option>`).join('')}
-          </select>
-        </div>
-        <div class="panel-section">
-          <label class="field-label" for="reqQuestion">Your career question</label>
-          <textarea id="reqQuestion" placeholder="What specifically would you like ${mentor.name.split(' ')[0]}'s take on?"></textarea>
-        </div>
-        <div class="panel-section">
-          <label class="field-label" for="resumeLink">Resume link</label>
-          <input type="url" class="form-input" id="resumeLink" placeholder="https://drive.google.com/... or similar">
-          <p class="form-error" id="formError" style="display:none;"></p>
-        </div>
-      `}
-    </div>
-    ${existingReq ? `
-      <div class="panel-footer">
-        <button class="btn btn-danger" id="cancelFromPanel" style="width:100%;justify-content:center;padding:13px;font-size:14.5px;">Cancel this request</button>
-      </div>
-    ` : `
-      <div class="panel-footer">
-        ${state.user
-          ? '<button class="btn btn-primary" id="sendRequest">Send request →</button>'
-          : '<button class="btn btn-primary" id="loginToRequest">Log in to send request</button>'}
-        <p class="form-note">Alumni typically reply within a few days. Booking a slot reserves it immediately.</p>
-      </div>
-    `}
-  `;
-
-  document.getElementById('closePanel').addEventListener('click', closePanel);
-
-  const photoBtn   = document.getElementById('photoBtn');
-  const photoInput = document.getElementById('photoInput');
-  photoBtn.addEventListener('click', () => photoInput.click());
-  photoInput.addEventListener('change', () => {
-    const file = photoInput.files[0];
-    if (!file) return;
-    if (!file.type.startsWith('image/')){ showToast('Please choose an image file.'); return; }
-    if (file.size > 3*1024*1024){ showToast('Image must be under 3 MB.'); return; }
-    const reader = new FileReader();
-    reader.onload = () => {
-      mentor.photo = reader.result;
-      renderPanel(mentor, existingReq);
-      renderMain();
-      showToast('Photo added.');
-    };
-    reader.readAsDataURL(file);
-  });
-  document.getElementById('photoRemove')?.addEventListener('click', () => {
-    mentor.photo = '';
-    renderPanel(mentor, existingReq);
-    renderMain();
-  });
-
-  document.querySelectorAll('[data-slot]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.selectedSlotId = state.selectedSlotId === btn.dataset.slot ? null : btn.dataset.slot;
-      renderPanel(mentor, existingReq);
-    });
-  });
-
-  document.getElementById('sendRequest')?.addEventListener('click', () => submitRequest(mentor));
-  document.getElementById('loginToRequest')?.addEventListener('click', () => {
-    state.afterLogin = mentor.id;
-    closePanel();
-    goAuth('login');
-  });
-  document.getElementById('cancelFromPanel')?.addEventListener('click', () => {
-    cancelRequest(existingReq.id);
-    closePanel();
-  });
-}
-
-function closePanel(){
-  const panel = document.getElementById('panel');
-  panel.classList.remove('open');
-  panel.setAttribute('aria-hidden','true');
-  ensureScrim(false);
-  state.panelMentorId  = null;
-  state.selectedSlotId = null;
-}
-
-function ensureScrim(open, onClick){
-  const scrim = document.getElementById('scrim');
-  scrim.classList.toggle('open', open);
-  scrim.onclick = open ? (onClick || (() => { closePanel(); closeFilterRail(); })) : null;
-}
-
-function submitRequest(mentor){
-  const question  = document.getElementById('reqQuestion').value.trim();
-  const resumeLink = document.getElementById('resumeLink').value.trim();
-  const topic      = document.getElementById('topicSelect').value;
-  const errorEl    = document.getElementById('formError');
-
-  if (!question || !resumeLink){
-    errorEl.textContent = 'Please fill in both a career question and a resume link.';
-    errorEl.style.display = 'flex';
-    return;
-  }
-
-  const slotId = state.selectedSlotId;
-  if (slotId){ slotById(mentor, slotId).taken = true; }
-
-  state.requests.unshift({
-    id: 'req-'+Date.now(),
-    mentorId: mentor.id,
-    topic, question, resumeLink, slotId,
-    status:  slotId ? 'confirmed' : 'pending',
-    sentAt: 'just now',
-  });
-
-  closePanel();
-  render();
-  showToast(slotId ? '🎉 Session booked — check My Mentorship.' : '✉ Request sent — check My Mentorship.');
-}
-
-function cancelRequest(reqId){
-  const req = state.requests.find(r => r.id === reqId);
-  if (req && req.slotId){
-    const slot = slotById(mentorById(req.mentorId), req.slotId);
-    if (slot) slot.taken = false;
-  }
-  state.requests = state.requests.filter(r => r.id !== reqId);
-  render();
-  showToast('Request cancelled.');
-}
-
-/* ============================================================
-   MY MENTORSHIP
-   ============================================================ */
-function renderMentorship(){
-  if (!state.user) return `
-    <div class="view-head">
-      <p class="section-label">My Mentorship</p>
-      <h2>Your mentorship hub</h2>
-      <p>Log in to see and manage your mentorship requests.</p>
-    </div>
-    <div class="empty-state">
-      <p>You're not logged in.</p>
-      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-        <button class="btn btn-primary" data-auth="login">Log in</button>
-        <button class="btn btn-ghost" data-auth="signup">Create account</button>
-      </div>
-    </div>
-  `;
-
-  if (!state.requests.length) return `
-    <div class="view-head">
-      <p class="section-label">My Mentorship</p>
-      <h2>Your mentorship hub</h2>
-      <p>Requests you've sent will collect here, along with the resume and question you shared.</p>
-    </div>
-    <div class="empty-state">
-      <p>You haven't reached out to any mentors yet.</p>
-      <button class="btn btn-primary" id="goDirectory">Browse the directory</button>
-    </div>
-  `;
-
-  return `
-    <div class="view-head">
-      <p class="section-label">My Mentorship</p>
-      <h2>Your mentorship hub</h2>
-      <p>${state.requests.length} request${state.requests.length===1?'':'s'} on file.</p>
-    </div>
-    ${state.requests.map(r => {
-      const mentor = mentorById(r.mentorId);
-      const slot   = r.slotId ? slotById(mentor, r.slotId) : null;
+    function makePhoto(m, heightClass = 'h-72 sm:h-80') {
+      if (m.photo) {
+        return `
+          <div class="relative ${heightClass} w-full overflow-hidden bg-[#DCEBFF]">
+            <img src="${m.photo}" alt="${m.name} — ${m.role} at ${m.company}" style="object-position: ${m.photoPos || '50% 20%'};" class="w-full h-full object-cover ${m.photoZoom || ''} transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0F2547]/55 via-transparent to-[#0F2547]/15 pointer-events-none"></div>
+            <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between gap-2">
+              <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-white/90 backdrop-blur-md shadow-sm" style="color: var(--navy);">${m.industry}</span>
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-[#0F2547]/70 text-white backdrop-blur-md">${batchText(m)}</span>
+            </div>
+            <div class="absolute bottom-4 left-4 z-10">
+              <span class="text-[11px] uppercase tracking-[0.14em] font-bold px-3 py-1 rounded-full bg-white/92 backdrop-blur-md shadow-sm" style="color: var(--navy);">${m.tone.tag}</span>
+            </div>
+          </div>`;
+      }
       return `
-        <div class="request-row">
-          <div class="request-main">
-            <h3>${mentor.name}</h3>
-            <p class="request-meta">${mentor.jobTitle}, ${mentor.company} · Batch of ${mentor.batch} · ${mentor.industry}</p>
-            <p class="request-meta">Topic: ${escapeHtml(r.topic)}</p>
-            ${slot ? `<p class="request-meta">📅 Scheduled: ${slot.date}, ${slot.time}</p>` : `<p class="request-meta">No fixed slot yet</p>`}
-            <p class="request-msg">"${escapeHtml(r.question)}"</p>
-            <p class="request-resume">Resume: <a href="${r.resumeLink}" target="_blank" rel="noopener">${escapeHtml(r.resumeLink)}</a></p>
+        <div class="relative ${heightClass} w-full overflow-hidden flex flex-col justify-between p-6" style="background: linear-gradient(135deg, ${m.tone.bg1} 0%, ${m.tone.bg2} 100%);">
+          <div class="relative z-10 flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-white/85" style="color: var(--navy);">${m.industry}</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-white/70" style="color: var(--text-muted);">${batchText(m)}</span>
           </div>
-          <span class="stamp ${r.status}">${r.status==='pending'?'Pending review':r.status==='confirmed'?'Confirmed':'Declined'}</span>
-          <button class="request-cancel" data-cancel="${r.id}">Cancel</button>
-        </div>
-      `;
-    }).join('')}
-  `;
-}
-function wireMentorship(){
-  document.getElementById('goDirectory')?.addEventListener('click', () => setView('directory'));
-  document.querySelectorAll('[data-cancel]').forEach(btn =>
-    btn.addEventListener('click', () => cancelRequest(btn.dataset.cancel))
-  );
-}
-
-/* ============================================================
-   RESOURCES
-   ============================================================ */
-let expandedResource = null;
-function renderResources(){
-  return `
-    <div class="view-head">
-      <p class="section-label">Resources</p>
-      <h2>Career guidance notes</h2>
-      <p>Short, specific advice contributed by alumni. A place to start a real conversation.</p>
-    </div>
-    ${RESOURCES.map(r => `
-      <div class="resource-row ${expandedResource===r.id?'expanded':''}" data-res="${r.id}">
-        <div class="resource-top">
-          <div>
-            <p class="resource-cat">${r.cat}</p>
-            <h3>${r.title}</h3>
-          </div>
-          <button class="resource-toggle" aria-label="Expand">+</button>
-        </div>
-        <p class="resource-detail">${r.detail}</p>
-      </div>
-    `).join('')}
-  `;
-}
-function wireResources(){
-  document.querySelectorAll('[data-res]').forEach(row => {
-    row.addEventListener('click', () => {
-      const id = row.dataset.res;
-      expandedResource = expandedResource===id ? null : id;
-      renderMain();
-    });
-  });
-}
-
-/* ============================================================
-   AUTH
-   ============================================================ */
-function goAuth(mode){ state.authMode = mode; setView('auth'); }
-
-function renderAuthActions(){
-  const el = document.getElementById('authActions');
-  if (state.user){
-    el.innerHTML = `<span class="auth-user">Hi, ${escapeHtml(state.user.name.split(' ')[0])}</span><button type="button" class="auth-link" id="logoutBtn">Log out</button>`;
-    document.getElementById('logoutBtn').addEventListener('click', logout);
-  } else {
-    el.innerHTML = `<button type="button" class="auth-link" data-auth="login">Log in</button><button type="button" class="btn btn-primary auth-signup" data-auth="signup">Sign up</button>`;
-  }
-}
-
-function loginUser(account){
-  state.user = { name: account.name, email: account.email, role: account.role };
-  state.requests = state.requestStore[account.email] || [];
-  const reopen = state.afterLogin;
-  state.afterLogin = null;
-  setView('directory');
-  showToast('Welcome back, '+account.name.split(' ')[0]+'! 👋');
-  if (reopen) openPanel(reopen);
-}
-
-function logout(){
-  state.requestStore[state.user.email] = state.requests;
-  state.requests = [];
-  state.user = null;
-  setView('home');
-  showToast('Logged out. See you soon!');
-}
-
-function renderAuth(){
-  const login = state.authMode === 'login';
-  return `
-    <div class="auth-wrap">
-      <div class="auth-card">
-        <h2>${login ? 'Welcome back' : 'Create account'}</h2>
-        <p class="auth-sub">${login ? 'Log in to request sessions and track your mentorship.' : 'Join Aluminite as a student or an alumnus.'}</p>
-        <div class="auth-switch">
-          <button type="button" data-auth="login" class="${login?'active':''}">Log in</button>
-          <button type="button" data-auth="signup" class="${login?'':'active'}">Sign up</button>
-        </div>
-        <form id="authForm" novalidate>
-          ${login ? '' : `
-          <div class="auth-field">
-            <label class="field-label" for="authName">Full name</label>
-            <input id="authName" type="text" autocomplete="name" placeholder="Your full name">
-          </div>`}
-          <div class="auth-field">
-            <label class="field-label" for="authEmail">Email</label>
-            <input id="authEmail" type="email" autocomplete="email" placeholder="you@email.com">
-          </div>
-          ${login ? '' : `
-          <div class="auth-field">
-            <label class="field-label" for="authRole">I am joining as</label>
-            <select id="authRole"><option>Student</option><option>Alumnus</option></select>
-          </div>`}
-          <div class="auth-field">
-            <label class="field-label" for="authPassword">Password</label>
-            <input id="authPassword" type="password" autocomplete="${login?'current-password':'new-password'}" placeholder="••••••••">
-          </div>
-          ${login ? '' : `
-          <div class="auth-field">
-            <label class="field-label" for="authConfirm">Confirm password</label>
-            <input id="authConfirm" type="password" autocomplete="new-password" placeholder="••••••••">
-          </div>`}
-          <p class="form-error" id="authError" style="display:none;"></p>
-          <button type="submit" class="btn btn-primary auth-submit">${login ? 'Log in →' : 'Create account →'}</button>
-        </form>
-        <p class="auth-foot">${login ? 'Demo account: student@kestrel.edu / password123' : 'Use at least 8 characters for your password.'}</p>
-        <p class="auth-foot">Accounts are saved in this browser only — no server.</p>
-      </div>
-    </div>
-  `;
-}
-
-/* Auth crypto helpers */
-const STORE_KEY = 'aluminite-v2';
-function loadStore(){
-  try { const r = localStorage.getItem(STORE_KEY); return r ? JSON.parse(r) : null; }
-  catch(e){ return null; }
-}
-function saveStore(){
-  try {
-    if (state.user) state.requestStore[state.user.email] = state.requests;
-    localStorage.setItem(STORE_KEY, JSON.stringify({
-      accounts: state.accounts,
-      requestStore: state.requestStore,
-      session: state.user ? state.user.email : null,
-    }));
-  } catch(e){}
-}
-function newSalt(){
-  const a = new Uint8Array(8);
-  if (typeof crypto!=='undefined' && crypto.getRandomValues) crypto.getRandomValues(a);
-  else for (let i=0;i<a.length;i++) a[i]=Math.floor(Math.random()*256);
-  return Array.from(a).map(b=>b.toString(16).padStart(2,'0')).join('');
-}
-async function hashPassword(password, salt){
-  const text = salt+':'+password;
-  if (typeof crypto!=='undefined' && crypto.subtle){
-    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
-    return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
-  }
-  let h=5381; for (const ch of text) h=((h*33)^ch.charCodeAt(0))>>>0;
-  return 'weak-'+h.toString(16);
-}
-
-function wireAuth(){
-  document.getElementById('authForm').addEventListener('submit', async e => {
-    e.preventDefault();
-    const err  = document.getElementById('authError');
-    const fail = msg => { err.textContent = msg; err.style.display = 'flex'; };
-    const email    = document.getElementById('authEmail').value.trim().toLowerCase();
-    const password = document.getElementById('authPassword').value;
-
-    if (state.authMode === 'login'){
-      const acct = state.accounts.find(a => a.email === email);
-      const ok   = acct && (await hashPassword(password, acct.salt)) === acct.hash;
-      if (!ok) return fail('Email and password do not match.');
-      loginUser(acct); return;
-    }
-
-    const name    = document.getElementById('authName').value.trim();
-    const role    = document.getElementById('authRole').value;
-    const confirm = document.getElementById('authConfirm').value;
-    if (!name) return fail('Enter your full name.');
-    if (!/^\S+@\S+\.\S+$/.test(email)) return fail('Enter a valid email address.');
-    if (password.length < 8) return fail('Password must be at least 8 characters.');
-    if (password !== confirm) return fail('Passwords do not match.');
-    if (state.accounts.some(a => a.email === email)) return fail('This email already has an account. Try logging in.');
-    const salt = newSalt();
-    const acct = { name, email, role, salt, hash: await hashPassword(password, salt) };
-    state.accounts.push(acct);
-    loginUser(acct);
-  });
-}
-
-/* ============================================================
-   HOME PAGE
-   ============================================================ */
-function renderHome(){
-  const featured  = ['m1','m4','m7'].map(mentorById);
-  const openSlots = MENTORS.reduce((n, m) => n + m.slots.filter(s => !s.taken).length, 0);
-
-  return `
-    <section class="hero">
-      <div>
-        <div class="hero-eyebrow">LPU Alumni Mentor Network</div>
-        <h2 class="brand">Alumin<em>ite</em></h2>
-        <p class="hero-tag">Ask the people who sat where you're sitting now.</p>
-        <p class="lead">Aluminite connects LPU students with alumni in software, core engineering, finance, and higher studies. Find someone whose path looks like yours, send your question and resume, and book a weekend session.</p>
-        <div class="hero-actions">
-          <button class="btn btn-primary btn-lg" id="heroBrowse">Browse mentors →</button>
-          <button class="btn btn-ghost btn-lg" id="heroHow">How it works</button>
-        </div>
-        <div class="scroll-hint">
-          <div class="scroll-arrow">↓</div>
-          <span>Scroll to explore</span>
-        </div>
-      </div>
-      <div class="card-stack" aria-hidden="true">
-        ${featured.map(m => `
-          <div class="stack-card">
-            <div class="mentor-tab"><span>Batch of ${m.batch}</span></div>
-            <div class="card-avatar">${avatarHtml(m, 'avatar-sm')}</div>
-            <div class="stack-body">
-              <h3>${m.name}</h3>
-              <p>${m.jobTitle}, ${m.company}</p>
-              <p class="ind">${m.industry}</p>
+          <div class="relative z-10 my-auto flex items-center justify-center">
+            <div class="w-24 h-24 rounded-full bg-white/90 border-2 border-white shadow-sm flex items-center justify-center">
+              <span class="serif italic font-semibold text-4xl" style="color: var(--navy);">${m.initials}</span>
             </div>
           </div>
-        `).join('')}
-      </div>
-    </section>
-
-    <div class="stats-band">
-      <div class="stat">
-        <div class="num" data-count="${MENTORS.length}">${MENTORS.length}</div>
-        <div class="lbl">Alumni mentors registered</div>
-      </div>
-      <div class="stat">
-        <div class="num">${INDUSTRIES.length}</div>
-        <div class="lbl">Industries covered</div>
-      </div>
-      <div class="stat">
-        <div class="num">${openSlots}</div>
-        <div class="lbl">Open weekend slots</div>
-      </div>
-    </div>
-
-    <section class="home-section" id="how">
-      <p class="section-label">How it works</p>
-      <h3>Three steps to your first session</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <h4>Find a mentor</h4>
-          <p>Filter by industry, company, or graduation batch. Read what each alumnus can mentor you on.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <h4>Share your question</h4>
-          <p>Write the career question you want answered and attach a link to your resume.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <h4>Book a weekend slot</h4>
-          <p>Pick an open Saturday or Sunday time from the mentor's calendar, or ask them to suggest one.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-section">
-      <p class="section-label">Browse by industry</p>
-      <h3>What path are you on?</h3>
-      <div class="industry-list">
-        ${INDUSTRIES.map(ind => `
-          <button class="industry-row" data-home-industry="${ind}">
-            <span>${ind}</span>
-            <span class="count">${MENTORS.filter(m => m.industry===ind).length} mentors</span>
-          </button>
-        `).join('')}
-      </div>
-    </section>
-
-    <p class="home-foot">
-      <span>Aluminite — LPU Alumni Mentor Network</span>
-      <span>Sample data · Requests reset on refresh</span>
-    </p>
-  `;
-}
-
-function wireHome(){
-  document.getElementById('heroBrowse').addEventListener('click', () => setView('directory'));
-  document.getElementById('heroHow').addEventListener('click', () => {
-    document.getElementById('how').scrollIntoView({behavior:'smooth', block:'start'});
-  });
-  document.querySelectorAll('[data-home-industry]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      state.filters = { industries:[btn.dataset.homeIndustry], company:'all', batchFrom:'', batchTo:'', query:'' };
-      setView('directory');
-    });
-  });
-}
-
-/* ============================================================
-   RENDER ENGINE
-   ============================================================ */
-function renderMain(){
-  const main = document.getElementById('mainContent');
-  if      (state.view==='home')        { main.innerHTML = renderHome();        wireHome(); }
-  else if (state.view==='directory')   { main.innerHTML = renderDirectory();   wireDirectory(); }
-  else if (state.view==='mentorship')  { main.innerHTML = renderMentorship();  wireMentorship(); }
-  else if (state.view==='auth')        { main.innerHTML = renderAuth();        wireAuth(); }
-  else                                  { main.innerHTML = renderResources();   wireResources(); }
-}
-
-function render(){ renderNav(); renderAuthActions(); renderMain(); saveStore(); }
-
-/* ============================================================
-   BOOT
-   ============================================================ */
-async function init(){
-  // Canvas + cursor
-  initCanvas();
-  initCursorGlow();
-
-  // Restore persisted state
-  const saved = loadStore();
-  if (saved){
-    state.accounts      = saved.accounts || [];
-    state.requestStore  = saved.requestStore || {};
-    Object.values(state.requestStore).forEach(list => list.forEach(r => {
-      const mentor = mentorById(r.mentorId);
-      const slot   = mentor && r.slotId ? slotById(mentor, r.slotId) : null;
-      if (slot) slot.taken = true;
-    }));
-    const acct = state.accounts.find(a => a.email === saved.session);
-    if (acct){
-      state.user     = { name: acct.name, email: acct.email, role: acct.role };
-      state.requests = state.requestStore[acct.email] || [];
+          <div class="relative z-10 flex items-center justify-center">
+            <span class="text-[11px] uppercase tracking-[0.14em] font-bold px-3 py-1 rounded-full bg-white/85" style="color: var(--navy);">${m.tone.tag}</span>
+          </div>
+        </div>`;
     }
-  }
 
-  // Demo account
-  if (!state.accounts.some(a => a.email==='student@kestrel.edu')){
-    const salt = newSalt();
-    state.accounts.push({ name:'Demo Student', email:'student@kestrel.edu', role:'Student', salt, hash: await hashPassword('password123', salt) });
-  }
+    function showTopMentors() {
+      const topSix = mentors.filter(m => m.featured).slice(0, 6);
+      byId('topSixBox').innerHTML = topSix.map((m, i) => {
+        const align = i % 2 === 0 ? 'mr-auto' : 'ml-auto';
+        const num = String(i + 1).padStart(2, '0');
+        return `
+          <div class="reveal flex w-full">
+            <article data-open="${m.id}" tabindex="0" role="button" aria-label="View profile of ${m.name}" class="card ${align} w-full md:w-[68%] lg:w-[58%] rounded-[26px] overflow-hidden cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[#2563EB]">
+              ${makePhoto(m)}
+              <div class="p-6 sm:p-7 space-y-3">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <p class="text-[11px] font-bold uppercase tracking-[0.18em] mb-1" style="color: var(--navy-bright);">${num} / ${m.company}</p>
+                    <h3 class="serif font-semibold text-2xl sm:text-3xl leading-snug group-hover:text-[#2563EB] transition-colors" style="color: var(--text-primary);">${m.name}</h3>
+                  </div>
+                  <span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:translate-x-1" style="background-color: var(--navy-soft); color: var(--navy-bright);">
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                  </span>
+                </div>
+                <p class="text-sm font-semibold" style="color: var(--text-primary);">${m.role} · ${m.company}</p>
+                <p class="text-sm leading-relaxed" style="color: var(--text-muted);">${m.highlight}</p>
+                <div class="pt-2 flex items-center justify-between text-xs font-semibold" style="color: var(--navy-bright);">
+                  <span>View full profile &amp; book appointment</span><span aria-hidden="true">→</span>
+                </div>
+              </div>
+            </article>
+          </div>`;
+      }).join('');
+      watchScroll();
+      if (window.lucide) lucide.createIcons();
+    }
 
-  render();
-}
+    function watchScroll() {
+      const items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(el => el.classList.add('show'));
+        return;
+      }
+      const watcher = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+      }, { threshold: 0.14 });
+      items.forEach(el => watcher.observe(el));
+    }
 
-// Global delegated event: home / auth link buttons
-document.getElementById('homeLink').addEventListener('click', () => setView('home'));
-document.addEventListener('click', e => {
-  const trigger = e.target.closest('[data-auth]');
-  if (trigger) goAuth(trigger.dataset.auth);
-});
+    function openProfile(id) {
+      const m = findMentor(id);
+      if (!m) return;
+      const modal = byId('profileModal');
+      const avatar = m.photo
+        ? `<div class="w-20 h-20 rounded-2xl overflow-hidden shrink-0 border-2 border-white shadow-md bg-[#DCEBFF]"><img src="${m.photo}" alt="${m.name}" style="object-position: ${m.photoPos || '50% 20%'};" class="w-full h-full object-cover ${m.photoZoom || ''}" /></div>`
+        : `<div class="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 border border-white shadow-sm" style="background: linear-gradient(135deg, ${m.tone.bg1}, ${m.tone.bg2});"><span class="serif italic font-semibold text-2xl" style="color: var(--navy);">${m.initials}</span></div>`;
 
-init();
+      byId('profileBody').innerHTML = `
+        <div class="flex items-start justify-between gap-4 pb-5 border-b" style="border-color: var(--border-soft);">
+          <div class="flex items-center gap-4">
+            ${avatar}
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-[0.18em]" style="color: var(--navy-bright);">${m.industry} · ${batchText(m)}</p>
+              <h3 id="profileName" class="serif font-semibold text-3xl sm:text-4xl leading-tight" style="color: var(--text-primary);">${m.name}</h3>
+              <p class="text-sm font-medium mt-0.5" style="color: var(--text-muted);">${m.role} at ${m.company} · ${m.degree}</p>
+            </div>
+          </div>
+          <button id="closeProfileBtn" type="button" class="p-2 rounded-xl hover:bg-[#DBEAFE] transition cursor-pointer" style="color: var(--text-muted);" aria-label="Close profile">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 py-5">
+          <div class="md:col-span-7 space-y-3">
+            <h4 class="text-xs font-bold uppercase tracking-[0.16em]" style="color: var(--navy);">Career Highlights</h4>
+            <ul class="space-y-2.5 text-sm leading-relaxed" style="color: var(--text-primary);">
+              ${m.bullets.map(b => `<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0" style="background-color: var(--navy-bright);"></span><span>${b}</span></li>`).join('')}
+            </ul>
+          </div>
+          <div class="md:col-span-5 space-y-4 md:border-l md:pl-6" style="border-color: var(--border-soft);">
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold uppercase tracking-[0.16em]" style="color: var(--navy);">Domain Expertise</h4>
+              <div class="flex flex-wrap gap-1.5">
+                ${m.expertise.map(e => `<span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-white border" style="border-color: var(--border-soft); color: var(--text-primary);">${e}</span>`).join('')}
+              </div>
+            </div>
+            <div class="space-y-2">
+              <h4 class="text-xs font-bold uppercase tracking-[0.16em]" style="color: var(--navy);">Mentoring Topics</h4>
+              <div class="flex flex-wrap gap-1.5">
+                ${m.topics.map(t => `<span class="px-2.5 py-1 rounded-lg text-xs font-semibold" style="background-color: var(--navy-soft); color: var(--navy);">${t}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 border-t flex flex-col sm:flex-row sm:items-center justify-between gap-4" style="border-color: var(--border-soft);">
+          <div class="flex items-center gap-5 text-xs font-semibold">
+            <a href="${m.linkedinUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:underline" style="color: var(--navy-bright);">
+              <i data-lucide="linkedin" class="w-4 h-4"></i><span>LinkedIn Profile</span>
+            </a>
+            <a href="${m.sourceUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:underline" style="color: var(--text-muted);">
+              <span>${m.sourceLabel}</span><i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+          <button type="button" data-book="${m.id}" class="btn-main px-7 py-3 rounded-xl text-sm font-semibold inline-flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="calendar-plus" class="w-4 h-4"></i><span>Book Appointment</span>
+          </button>
+        </div>`;
+
+      modal.classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+      byId('closeProfileBtn').addEventListener('click', () => modal.classList.add('hidden'));
+    }
+
+    function showPage(pageId) {
+      ['homePage', 'bookPage', 'donePage'].forEach(id => {
+        byId(id).classList.toggle('hidden', id !== pageId);
+      });
+      window.scrollTo({ top: 0, behavior: 'instant' });
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function openBooking(id) {
+      const m = findMentor(id) || mentors[0];
+      activeMentor = m;
+      byId('profileModal').classList.add('hidden');
+      byId('moreModal').classList.add('hidden');
+      byId('bookSubtitle').textContent = `1:1 session with ${m.name} (${m.role} · ${m.company})`;
+      byId('userTopic').innerHTML = m.topics.map(t => `<option value="${t.replace(/"/g, '&quot;')}">${t}</option>`).join('');
+      byId('bookForm').reset();
+      byId('slotInput').value = '';
+      byId('errorBox').classList.add('hidden');
+      pickedDate = '';
+      pickedTime = '';
+      showPage('bookPage');
+    }
+
+    function drawCalendar() {
+      byId('calHeading').textContent = `${months[calMonth]} ${calYear}`;
+      byId('prevMonthBtn').disabled = calYear === today.getFullYear() && calMonth === today.getMonth();
+      byId('nextMonthBtn').disabled = calYear === maxDate.getFullYear() && calMonth === maxDate.getMonth();
+
+      const startDay = new Date(calYear, calMonth, 1).getDay();
+      const totalDays = new Date(calYear, calMonth + 1, 0).getDate();
+      let cells = '<div></div>'.repeat(startDay);
+
+      for (let d = 1; d <= totalDays; d++) {
+        const date = new Date(calYear, calMonth, d);
+        const day = date.getDay();
+        const canPick = (day === 0 || day === 6) && date >= today && date <= maxDate;
+        const iso = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+
+        if (canPick) {
+          const style = pickedDate === iso ? 'bg-[#2563EB] text-white shadow-sm' : 'bg-[#DBEAFE] text-[#1B4B9B] hover:bg-[#2563EB] hover:text-white';
+          cells += `<button type="button" data-date="${iso}" class="h-10 rounded-xl text-xs font-semibold transition cursor-pointer ${style}">${d}</button>`;
+        } else {
+          cells += `<button type="button" disabled class="h-10 rounded-xl text-xs text-slate-300 cursor-not-allowed">${d}</button>`;
+        }
+      }
+
+      byId('calDays').innerHTML = cells;
+      drawTimes();
+    }
+
+    function drawTimes() {
+      const wrap = byId('timesWrap');
+      const useBtn = byId('useSlotBtn');
+      if (!pickedDate) {
+        wrap.classList.add('hidden');
+        useBtn.disabled = true;
+        return;
+      }
+      const [y, m, d] = pickedDate.split('-').map(Number);
+      const formatted = new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' });
+      byId('pickedDateLabel').textContent = `Available Slots — ${formatted}`;
+      wrap.classList.remove('hidden');
+
+      byId('timesGrid').innerHTML = timeSlots.map(t => {
+        const style = pickedTime === t ? 'bg-[#2563EB] text-white border-[#2563EB]' : 'bg-white text-[#1B4B9B] border-[#2563EB]/25 hover:bg-[#DBEAFE]';
+        return `<button type="button" data-time="${t}" class="py-2 px-3 rounded-xl text-xs font-semibold border transition cursor-pointer ${style}">${t}</button>`;
+      }).join('');
+      useBtn.disabled = !(pickedDate && pickedTime);
+    }
+
+    function setupFilters() {
+      const companies = [...new Set(mentors.map(m => m.company))].sort();
+      companies.forEach(c => byId('companyFilter').add(new Option(c, c)));
+      const batches = [...new Set(mentors.map(m => m.batch))];
+      batches.forEach(b => byId('batchFilter').add(new Option(b === 'PG / Early Batch' ? 'PG / Early Batches' : `Batch ${b}`, b)));
+    }
+
+    function showAllMentors() {
+      const ind = byId('industryFilter').value;
+      const comp = byId('companyFilter').value;
+      const batch = byId('batchFilter').value;
+      const list = [...mentors.filter(m => !m.featured), ...mentors.filter(m => m.featured)].filter(m =>
+        (ind === 'All' || m.industry === ind) &&
+        (comp === 'All' || m.company === comp) &&
+        (batch === 'All' || m.batch === batch)
+      );
+
+      if (list.length === 0) {
+        byId('moreList').innerHTML = `<div class="col-span-full py-10 text-center text-sm" style="color: var(--text-muted);">No alumni match those filters. Try selecting "All".</div>`;
+        return;
+      }
+
+      byId('moreList').innerHTML = list.map(m => {
+        const thumb = m.photo
+          ? `<div class="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white bg-[#DCEBFF]"><img src="${m.photo}" alt="${m.name}" style="object-position: ${m.photoPos || '50% 20%'};" class="w-full h-full object-cover ${m.photoZoom || ''}" /></div>`
+          : `<div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 border border-white" style="background: linear-gradient(135deg, ${m.tone.bg1}, ${m.tone.bg2});"><span class="serif italic font-semibold text-lg" style="color: var(--navy);">${m.initials}</span></div>`;
+        return `
+          <button type="button" data-open="${m.id}" class="card rounded-2xl p-4 text-left flex items-center gap-3.5 cursor-pointer group">
+            ${thumb}
+            <div class="min-w-0 flex-1">
+              <div class="text-[10px] font-bold uppercase tracking-wider truncate" style="color: var(--navy-bright);">${m.industry} · ${m.company}</div>
+              <div class="serif font-semibold text-lg truncate group-hover:text-[#2563EB] transition-colors" style="color: var(--text-primary);">${m.name}</div>
+              <div class="text-xs truncate" style="color: var(--text-muted);">${m.role}</div>
+            </div>
+            <i data-lucide="chevron-right" class="w-4 h-4 shrink-0" style="color: var(--text-muted);"></i>
+          </button>`;
+      }).join('');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function openDirectory() {
+      showAllMentors();
+      byId('moreModal').classList.remove('hidden');
+    }
+
+    function openCalendar() {
+      calYear = today.getFullYear();
+      calMonth = today.getMonth();
+      drawCalendar();
+      byId('calModal').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function setupEvents() {
+      ['moreBtn', 'navMoreBtn', 'heroMoreBtn'].forEach(id => byId(id).addEventListener('click', openDirectory));
+      ['industryFilter', 'companyFilter', 'batchFilter'].forEach(id => byId(id).addEventListener('change', showAllMentors));
+
+      const moreModal = byId('moreModal');
+      const profileModal = byId('profileModal');
+      const calModal = byId('calModal');
+
+      byId('closeMoreBtn').addEventListener('click', () => moreModal.classList.add('hidden'));
+      byId('closeCalBtn').addEventListener('click', () => calModal.classList.add('hidden'));
+      [moreModal, profileModal, calModal].forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.add('hidden'); }));
+
+      document.addEventListener('click', e => {
+        const bookBtn = e.target.closest('[data-book]');
+        if (bookBtn) return openBooking(bookBtn.getAttribute('data-book'));
+        const openBtn = e.target.closest('[data-open]');
+        if (openBtn) {
+          moreModal.classList.add('hidden');
+          openProfile(openBtn.getAttribute('data-open'));
+        }
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') [profileModal, moreModal, calModal].forEach(m => m.classList.add('hidden'));
+        if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[data-open]')) {
+          e.preventDefault();
+          openProfile(e.target.getAttribute('data-open'));
+        }
+      });
+
+      byId('backHomeBtn').addEventListener('click', () => showPage('homePage'));
+      byId('openCalBtn').addEventListener('click', openCalendar);
+      byId('slotInput').addEventListener('click', openCalendar);
+
+      byId('prevMonthBtn').addEventListener('click', () => {
+        if (calMonth === 0) { calMonth = 11; calYear--; } else { calMonth--; }
+        drawCalendar();
+      });
+      byId('nextMonthBtn').addEventListener('click', () => {
+        if (calMonth === 11) { calMonth = 0; calYear++; } else { calMonth++; }
+        drawCalendar();
+      });
+
+      byId('calDays').addEventListener('click', e => {
+        const btn = e.target.closest('[data-date]');
+        if (!btn) return;
+        pickedDate = btn.getAttribute('data-date');
+        pickedTime = '';
+        drawCalendar();
+      });
+
+      byId('timesGrid').addEventListener('click', e => {
+        const btn = e.target.closest('[data-time]');
+        if (!btn) return;
+        pickedTime = btn.getAttribute('data-time');
+        drawTimes();
+      });
+
+      byId('useSlotBtn').addEventListener('click', () => {
+        if (!pickedDate || !pickedTime) return;
+        const [y, m, d] = pickedDate.split('-').map(Number);
+        const formatted = new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+        byId('slotInput').value = `${formatted} · ${pickedTime}`;
+        calModal.classList.add('hidden');
+      });
+
+      byId('bookForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const err = byId('errorBox');
+        err.classList.add('hidden');
+
+        const name = byId('userName').value.trim();
+        const email = byId('userEmail').value.trim();
+        const topic = byId('userTopic').value;
+        const slot = byId('slotInput').value.trim();
+        const resume = byId('userResume').value.trim();
+
+        if (resume && !/^https?:\/\/.+/i.test(resume)) {
+          err.textContent = 'If you include a resume link, please start it with https://';
+          err.classList.remove('hidden');
+          return;
+        }
+
+        try {
+          const list = JSON.parse(localStorage.getItem('aluminite_bookings_v3') || '[]');
+          list.unshift({ mentor: activeMentor.name, name: name || 'Student', email, topic, slot: slot || 'Next available weekend slot', at: new Date().toISOString() });
+          localStorage.setItem('aluminite_bookings_v3', JSON.stringify(list));
+        } catch (_) {}
+
+        byId('doneSummary').textContent = [
+          `Mentor: ${activeMentor.name} (${activeMentor.company})`,
+          topic ? `Topic: ${topic}` : '',
+          slot ? `Slot: ${slot}` : 'Weekend slot will be confirmed via email'
+        ].filter(Boolean).join(' · ');
+        showPage('donePage');
+      });
+
+      byId('goHomeBtn').addEventListener('click', () => showPage('homePage'));
+      byId('exploreMoreBtn').addEventListener('click', () => { showPage('homePage'); openDirectory(); });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setupFilters();
+      showTopMentors();
+      setupEvents();
+      if (window.lucide) lucide.createIcons();
+    });
